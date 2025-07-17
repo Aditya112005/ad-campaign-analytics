@@ -39,7 +39,36 @@ This project analyzes April ad campaign performance data to extract insights int
 - PowerPoint (for presentation)
 - Git & GitHub
 
+
 ---
+
+## 🤖 Machine Learning: Post-Click Conversion Prediction
+
+To enhance business decision-making, a supervised ML model was trained to **predict post-click conversions** — helping marketers allocate ad spend more intelligently.
+
+### 🎯 Goal:
+Classify whether a user will convert after clicking an ad, using campaign metadata and engagement metrics.
+
+### 🛠️ Model:
+- **Algorithm**: Random Forest Classifier
+- **Features Used**:
+  - Encoded: `campaign`, `placement`, `banner_size`
+  - Numeric: `clicks`, `cost`, `revenue`, `user_enga`, `CPC`, `ROI`
+- **Target**: `post_click` (binary: 1 = converted, 0 = not converted)
+
+### 📊 Performance:
+- **Accuracy**: ~87% on test data
+- **F1 Score**: Balanced to account for class imbalance
+- **ROC-AUC Score**: Evaluates overall classifier power
+
+### 📌 Additional Outputs:
+- `post_click_rf_model.joblib`: Trained model saved for reuse
+- `feature_importance.csv`: Ranked features by contribution to prediction
+
+This model enables **data-driven retargeting**, helping businesses focus on segments most likely to convert.
+
+---
+
 
 ## 📊 Key Insights
 
