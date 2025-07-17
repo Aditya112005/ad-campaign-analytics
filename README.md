@@ -39,7 +39,6 @@ This project analyzes April ad campaign performance data to extract insights int
 - PowerPoint (for presentation)
 - Git & GitHub
 
-
 ---
 
 ## 🤖 Machine Learning: Post-Click Conversion Prediction
@@ -69,15 +68,31 @@ This model enables **data-driven retargeting**, helping businesses focus on segm
 
 ---
 
-
 ## 📊 Key Insights
 
-- **160x600** banners had the highest CTR
-- Weekday campaigns outperformed weekends in both clicks and conversions
-- Placements like **Facebook** and **Google Search** provided strong ROI
-- Some campaigns had high cost but zero conversions (opportunity to optimize)
+- 🔼 **High CPC Placements**:
+  - Encoded placements **2, 4, and 1** had the **highest average CPC** (~0.075–0.078).
+  - Indicates costly ad spaces—only worth investing in if they yield high ROI or conversions.
+  
+- 🔽 **Low CPC Placement**:
+  - Encoded placement **5** showed the **lowest CPC**, making it a cost-effective channel worth deeper analysis.
+
+- 💰 **Top Performing Campaign**:
+  - Encoded **Campaign 0** had an **ROI > 1.1**, generating strong returns.
+  - Campaigns 1 and 2 had lower ROI and may need optimization.
+
+- 📐 **Best Banner Size**:
+  - **160x600** banners had the **highest conversion rate**, confirming their effectiveness.
+
+- 📅 **Timing Matters**:
+  - Weekday campaigns showed **better performance** in both **clicks** and **post-click conversions** than weekends.
+
+- ⚠️ **Optimization Opportunity**:
+  - Some campaigns incurred **high costs with zero conversions**—candidates for elimination or redesign.
+
+- 🤖 **ML Model Insights**:
+  - **Random Forest** classifier achieved an **F1 Score of ~87%**.
+  - Top predictive features: **CPC, ROI, Clicks, Campaign ID**.
+  - Enables **conversion probability scoring** for smarter targeting and ad spend optimization.
 
 ---
-
-
-
