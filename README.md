@@ -1,98 +1,83 @@
 #  Ad Campaign Analytics
 
-This project analyzes April ad campaign performance data to extract insights into user engagement, conversion behavior, and ROI. It answers 20 business-critical questions using Python and visualizes patterns in revenue, clicks, cost, and placements.
+This project analyzes April ad campaign data (~15,000 records) to uncover trends in engagement, conversions, and ROI. It answers 20 key business questions using Python, visualizations, and machine learning to guide smarter ad spending.
 
 ---
 
 ##  Dataset
 
-- Over 15,000 records
-- Columns include:
+- ~15,000 records with:
   - `campaign`, `placement`, `banner_size`
   - `revenue`, `cost`, `clicks`, `user_enga`, `post_click`
 - Tracks both **pre-click engagement** and **post-click conversions**
 
 ---
 
-## 🎯 Objectives
+##  Goals
 
-- Understand which placements and banners perform best
-- Analyze conversion trends across campaigns and channels
-- Recommend data-backed marketing actions
-
----
-
-## 📈 KPIs Computed
-
-- Click Through Rate (CTR)
-- Cost Per Click (CPC)
-- Conversion Rate
-- Return on Investment (ROI)
-- Revenue per Impression
+- Identify top-performing placements, banners, and campaigns  
+- Understand pre/post-click user behavior  
+- Recommend ROI-driven ad optimizations  
 
 ---
 
-## 🔍 Tools & Technologies
+##  KPIs Computed
 
-- Python (Pandas, Matplotlib, Seaborn)
-- Jupyter Notebook
-- PowerPoint (for presentation)
-- Git & GitHub
-
----
-
-## 🤖 Machine Learning: Post-Click Conversion Prediction
-
-To enhance business decision-making, a supervised ML model was trained to **predict post-click conversions** — helping marketers allocate ad spend more intelligently.
-
-### 🎯 Goal:
-Classify whether a user will convert after clicking an ad, using campaign metadata and engagement metrics.
-
-### 🛠️ Model:
-- **Algorithm**: Random Forest Classifier
-- **Features Used**:
-  - Encoded: `campaign`, `placement`, `banner_size`
-  - Numeric: `clicks`, `cost`, `revenue`, `user_enga`, `CPC`, `ROI`
-- **Target**: `post_click` (binary: 1 = converted, 0 = not converted)
-
-### 📊 Performance:
-- **Accuracy**: ~87% on test data
-- **F1 Score**: Balanced to account for class imbalance
-- **ROC-AUC Score**: Evaluates overall classifier power
-
-### 📌 Additional Outputs:
-- `post_click_rf_model.joblib`: Trained model saved for reuse
-- `feature_importance.csv`: Ranked features by contribution to prediction
-
-This model enables **data-driven retargeting**, helping businesses focus on segments most likely to convert.
+- **CTR** (Click Through Rate)  
+- **CPC** (Cost Per Click)  
+- **Conversion Rate**  
+- **ROI** (Return on Investment)  
+- **Revenue per Impression**
 
 ---
 
-## 📊 Key Insights
+##  Tools & Technologies
 
-- 🔼 **High CPC Placements**:
-  - Encoded placements **2, 4, and 1** had the **highest average CPC** (~0.075–0.078).
-  - Indicates costly ad spaces—only worth investing in if they yield high ROI or conversions.
-  
-- 🔽 **Low CPC Placement**:
-  - Encoded placement **5** showed the **lowest CPC**, making it a cost-effective channel worth deeper analysis.
-
-- 💰 **Top Performing Campaign**:
-  - Encoded **Campaign 0** had an **ROI > 1.1**, generating strong returns.
-  - Campaigns 1 and 2 had lower ROI and may need optimization.
-
-- 📐 **Best Banner Size**:
-  - **160x600** banners had the **highest conversion rate**, confirming their effectiveness.
-
-- 📅 **Timing Matters**:
-  - Weekday campaigns showed **better performance** in both **clicks** and **post-click conversions** than weekends.
-
-- ⚠️ **Optimization Opportunity**:
-  - Some campaigns incurred **high costs with zero conversions**—candidates for elimination or redesign.
-
-- 🤖 **ML Model Insights**:
-  - **Random Forest** classifier achieved an **F1 Score of ~87%**.
-  - Top predictive features: **CPC, ROI, Clicks, Campaign ID**.
-  - Enables **conversion probability scoring** for smarter targeting and ad spend optimization.
+- Python: `pandas`, `matplotlib`, `seaborn`
+- Jupyter Notebook  
+- Git & GitHub  
+- PowerPoint (presentation)
 
 ---
+
+## Machine Learning: Post-Click Conversion Prediction
+
+Used **Random Forest Classifier** to predict whether a user will convert after clicking an ad.
+
+### Model Highlights:
+- **Features**: campaign metadata, engagement metrics, CPC, ROI  
+- **Target**: `post_click` (binary: 1 = converted, 0 = not)  
+- **Accuracy**: ~87%, balanced **F1 Score**  
+- **Outputs**:
+  - `post_click_rf_model.joblib`: trained model  
+  - `feature_importance.csv`: top predictors
+ Enables **conversion probability scoring** for better targeting and budget allocation.
+
+---
+
+## Key Insights
+
+-  **160x600** banners → highest conversion rate  
+-  **Campaign 0** → ROI > 1.1; Campaigns 1 & 2 underperform  
+-  **Placements 2, 4, 1** → Highest CPC (~0.075–0.078)  
+-  **Placement 5** → Lowest CPC, highly cost-effective  
+-  **Weekdays** outperform weekends in both clicks and conversions  
+-  Some campaigns spend high but yield zero conversions  
+- Top predictive ML features: **CPC**, **ROI**, **Clicks**, **Campaign ID**
+
+---
+
+## 📎 Files Included
+
+- `campaign_analysis.ipynb` – Main analysis notebook  
+- `post_click_rf_model.joblib` – Trained ML model  
+- `feature_importance.csv` – Ranked ML features  
+- `conversion_rate_banner.png` – Visual output
+- `Ad-Campaign-Analytics-and-ML-Based-Conversion-Prediction.pdf`-presentation
+- `online_advertising_performance_data`-data on which the analysis was performed
+
+---
+
+## 💡 Author
+
+*Aditya Kumar Singh*
